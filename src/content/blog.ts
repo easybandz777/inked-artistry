@@ -1,0 +1,58 @@
+import type { BlogPost } from '@/lib/types';
+
+export const BLOG_POSTS: BlogPost[] = [
+    {
+        slug: 'what-to-expect-from-microblading',
+        title: 'What to Expect From Your First Microblading Appointment',
+        excerpt: 'A comprehensive guide walking you through every step of the microblading process — from consultation to healed results.',
+        category: 'Education',
+        date: '2025-01-15',
+        readTime: '6 min read',
+        image: '/images/blog/microblading-guide.jpg',
+    },
+    {
+        slug: 'healed-vs-fresh-brows',
+        title: 'Healed Brows vs. Fresh Brows: Understanding the Difference',
+        excerpt: 'Why your brows look different right after your appointment versus after they heal — and what to expect during the process.',
+        category: 'Education',
+        date: '2025-02-01',
+        readTime: '4 min read',
+        image: '/images/blog/healed-vs-fresh.jpg',
+    },
+    {
+        slug: 'pre-care-aftercare-guide',
+        title: 'The Complete Pre-Care & Aftercare Guide for PMU',
+        excerpt: 'Everything you need to do before and after your permanent makeup appointment for the best possible results.',
+        category: 'Aftercare',
+        date: '2025-02-15',
+        readTime: '7 min read',
+        image: '/images/blog/aftercare-guide.jpg',
+    },
+    {
+        slug: 'choosing-the-right-artist',
+        title: 'How to Choose the Right Permanent Makeup Artist',
+        excerpt: 'Key factors to consider when selecting your PMU artist — from portfolio quality to safety standards to technique mastery.',
+        category: 'Tips',
+        date: '2025-03-01',
+        readTime: '5 min read',
+        image: '/images/blog/choosing-artist.jpg',
+    },
+    {
+        slug: 'pmu-myths-debunked',
+        title: '7 Common PMU Myths — Debunked',
+        excerpt: 'Let\'s set the record straight on the most common misconceptions about permanent makeup, pain levels, and results.',
+        category: 'Education',
+        date: '2025-03-10',
+        readTime: '5 min read',
+        image: '/images/blog/pmu-myths.jpg',
+    },
+    {
+        slug: 'becoming-a-pmu-artist',
+        title: 'What It Really Takes to Become a PMU Artist',
+        excerpt: 'Thinking about a career in permanent makeup? Here\'s an honest look at what the journey entails.',
+        category: 'Academy',
+        date: '2025-03-15',
+        readTime: '6 min read',
+        image: '/images/blog/becoming-artist.jpg',
+    },
+];
