@@ -2095,3 +2095,89 @@ input:focus, textarea:focus, select:focus {
   color: #fff;
 }
 
+/* ── Login Error & Demo Credentials ── */
+.portal-login-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 6px;
+  color: #fca5a5;
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+}
+
+.portal-demo-credentials {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background: rgba(184, 149, 106, 0.08);
+  border: 1px solid rgba(184, 149, 106, 0.2);
+  border-radius: 8px;
+}
+
+.portal-demo-title {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--rose-gold);
+  margin-bottom: 0.6rem;
+}
+
+.portal-demo-account {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+}
+
+.portal-demo-role {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.5);
+  width: 55px;
+}
+
+.portal-demo-detail {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.02em;
+}
+
+.portal-signout {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
+}
+
+.portal-signout:hover {
+  color: var(--rose-gold);
+}
+
+.portal-login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.portal-login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+

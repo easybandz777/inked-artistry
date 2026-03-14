@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { BookOpen, Download, MessageSquare, LayoutDashboard, Menu, X } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { BookOpen, Download, MessageSquare, LayoutDashboard, Menu, X, LogOut } from 'lucide-react';
 import { useState } from 'react';
+import { useAuth, RequireAuth } from '@/lib/auth';
 
 const NAV_ITEMS = [
     { href: '/academy/portal/dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -13,8 +14,23 @@ const NAV_ITEMS = [
 ];
 
 export default function PortalShell({ children }: { children: React.ReactNode }) {
+    return (
+        <RequireAuth>
+            <PortalShellInner>{children}</PortalShellInner>
+        </RequireAuth>
+    );
+}
+
+function PortalShellInner({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
+    const router = useRouter();
+    const { user, logout } = useAuth();
     const [mobileOpen, setMobileOpen] = useState(false);
+
+    const handleLogout = () => {
+        logout();
+        router.push('/academy/portal/login');
+    };
 
     return (
         <div className="portal-layout">
@@ -31,7 +47,9 @@ export default function PortalShell({ children }: { children: React.ReactNode })
             <aside className={`portal-sidebar ${mobileOpen ? 'portal-sidebar-open' : ''}`}>
                 <div className="portal-sidebar-brand">
                     <p className="portal-sidebar-label">Inked Academy</p>
-                    <p className="portal-sidebar-sub">Student Portal</p>
+                    <p className="portal-sidebar-sub">
+                        {user ? `${user.name} · ${user.role === 'admin' ? 'Administrator' : 'Student'}` : 'Student Portal'}
+                    </p>
                 </div>
                 <nav className="portal-nav">
                     {NAV_ITEMS.map((item) => {
@@ -53,7 +71,10 @@ export default function PortalShell({ children }: { children: React.ReactNode })
                     })}
                 </nav>
                 <div className="portal-sidebar-footer">
-                    <Link href="/academy/portal/login" className="portal-signout">Sign Out</Link>
+                    <button onClick={handleLogout} className="portal-signout">
+                        <LogOut className="h-3.5 w-3.5" />
+                        Sign Out
+                    </button>
                 </div>
             </aside>
 

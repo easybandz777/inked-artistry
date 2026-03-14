@@ -1,12 +1,50 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+'use client';
 
-export const metadata: Metadata = {
-    title: 'Student Login | Inked Academy Portal',
-    description: 'Access your Inked Academy student portal — curriculum, resources, and mentorship support.',
-};
+import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useState, Suspense } from 'react';
+import { useAuth } from '@/lib/auth';
+import { LogIn, AlertCircle } from 'lucide-react';
 
 export default function PortalLoginPage() {
+    return (
+        <Suspense>
+            <LoginInner />
+        </Suspense>
+    );
+}
+
+function LoginInner() {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const { login, user } = useAuth();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    // If already logged in, redirect
+    if (user) {
+        const redirect = searchParams.get('redirect') || '/academy/portal/dashboard';
+        router.replace(redirect);
+        return null;
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setError('');
+        setLoading(true);
+
+        const err = login(email, password);
+        if (err) {
+            setError(err);
+            setLoading(false);
+        } else {
+            const redirect = searchParams.get('redirect') || '/academy/portal/dashboard';
+            router.push(redirect);
+        }
+    };
+
     return (
         <div className="portal-login-page">
             <div className="portal-login-card">
@@ -19,8 +57,16 @@ export default function PortalLoginPage() {
                     </p>
                 </div>
 
+                {/* Error message */}
+                {error && (
+                    <div className="portal-login-error">
+                        <AlertCircle className="h-4 w-4 shrink-0" />
+                        <span>{error}</span>
+                    </div>
+                )}
+
                 {/* Login form */}
-                <form className="portal-login-form" action="/academy/portal/dashboard">
+                <form className="portal-login-form" onSubmit={handleSubmit}>
                     <div className="portal-field">
                         <label htmlFor="email" className="portal-label">Email Address</label>
                         <input
@@ -29,6 +75,8 @@ export default function PortalLoginPage() {
                             autoComplete="email"
                             placeholder="you@email.com"
                             className="portal-input"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                     </div>
@@ -41,6 +89,8 @@ export default function PortalLoginPage() {
                             autoComplete="current-password"
                             placeholder="••••••••"
                             className="portal-input"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             required
                         />
                     </div>
@@ -50,13 +100,26 @@ export default function PortalLoginPage() {
                             <input type="checkbox" className="portal-checkbox" />
                             <span>Remember me</span>
                         </label>
-                        <Link href="#" className="portal-forgot">Forgot password?</Link>
                     </div>
 
-                    <button type="submit" className="portal-login-btn">
-                        Sign In to Portal
+                    <button type="submit" className="portal-login-btn" disabled={loading}>
+                        <LogIn className="h-4 w-4" />
+                        {loading ? 'Signing in...' : 'Sign In to Portal'}
                     </button>
                 </form>
+
+                {/* Demo credentials helper */}
+                <div className="portal-demo-credentials">
+                    <p className="portal-demo-title">Demo Accounts</p>
+                    <div className="portal-demo-account">
+                        <span className="portal-demo-role">Admin</span>
+                        <span className="portal-demo-detail">admin@inkedacademy.com / admin123</span>
+                    </div>
+                    <div className="portal-demo-account">
+                        <span className="portal-demo-role">Student</span>
+                        <span className="portal-demo-detail">student@inkedacademy.com / student123</span>
+                    </div>
+                </div>
 
                 <p className="portal-login-footer">
                     Not yet enrolled?{' '}
