@@ -2051,4 +2051,47 @@ input:focus, textarea:focus, select:focus {
   border-radius: 50%;
 }
 
+/* ── Student Login Button ── */
+.student-login-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  background: rgba(184,149,106, 0.15);
+  border: 1px solid rgba(184,149,106, 0.4);
+  border-radius: 50px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.student-login-btn:hover {
+  background: rgba(184,149,106, 0.3);
+  border-color: var(--rose-gold);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(184,149,106,0.25);
+  transform: translateY(-1px);
+}
+
+.student-login-btn-dark {
+  margin-top: 1.5rem;
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.student-login-btn-dark:hover {
+  background: rgba(184,149,106,0.2);
+  border-color: var(--rose-gold);
+  color: #fff;
+}
 

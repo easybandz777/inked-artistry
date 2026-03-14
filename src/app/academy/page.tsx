@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ACADEMY_INFO, FLAGSHIP_COURSE, CURRICULUM_MODULES } from '@/content/academy';
 import {
     GraduationCap, BookOpen, Users, Sparkles, CheckCircle,
-    ArrowRight, Palette, HeartHandshake, Clock, Award
+    ArrowRight, Palette, HeartHandshake, Clock, Award, LogIn
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -89,12 +89,10 @@ export default function AcademyPage() {
                                 Apply Now
                             </Link>
                         </div>
-                        <p className="academy-hero-portal-link">
-                            Already enrolled?{' '}
-                            <Link href="/academy/portal/login" className="academy-hero-portal-a">
-                                Student Login →
-                            </Link>
-                        </p>
+                        <Link href="/academy/portal/dashboard" className="student-login-btn">
+                            <LogIn className="h-4 w-4" />
+                            Student Portal Login
+                        </Link>
                     </AnimatedSection>
                 </div>
             </section>
@@ -285,6 +283,10 @@ export default function AcademyPage() {
                                 Join the Waitlist
                             </Link>
                         </div>
+                        <Link href="/academy/portal/dashboard" className="student-login-btn student-login-btn-dark">
+                            <LogIn className="h-4 w-4" />
+                            Current Student? Access Your Portal
+                        </Link>
                     </AnimatedSection>
                 </div>
             </Section>
