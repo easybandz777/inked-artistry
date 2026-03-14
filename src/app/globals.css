@@ -2181,3 +2181,125 @@ input:focus, textarea:focus, select:focus {
   cursor: not-allowed;
 }
 
+/* ── Expandable Resource Guide Cards ── */
+.portal-resource-card-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font-family: inherit;
+}
+
+.portal-resource-card-toggle:hover {
+  background: rgba(184,149,106,0.05);
+}
+
+.portal-resource-chevron {
+  color: var(--rose-gold);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.portal-resource-card-toggle:hover .portal-resource-chevron {
+  opacity: 1;
+}
+
+.portal-resource-card-open {
+  border-color: rgba(184,149,106,0.3) !important;
+}
+
+.portal-resource-content {
+  padding: 0.5rem 1.25rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.portal-resource-markdown {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+}
+
+.portal-resource-markdown h2 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--warm-white);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.portal-resource-markdown h2:first-child {
+  margin-top: 0.5rem;
+}
+
+.portal-resource-markdown h3 {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--rose-gold);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.portal-resource-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.78rem;
+}
+
+.portal-resource-markdown td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.75);
+}
+
+.portal-resource-markdown tr:first-child td {
+  background: rgba(184,149,106,0.1);
+  font-weight: 600;
+  color: var(--warm-white);
+}
+
+.portal-resource-markdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.portal-resource-markdown li {
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  position: relative;
+  color: rgba(255,255,255,0.75);
+}
+
+.portal-resource-markdown li::before {
+  content: '•';
+  position: absolute;
+  left: 0.25rem;
+  color: var(--rose-gold);
+}
+
+.portal-resource-markdown strong {
+  color: var(--warm-white);
+  font-weight: 600;
+}
+
+.portal-resource-markdown blockquote {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--rose-gold);
+  background: rgba(184,149,106,0.08);
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+}
+
+.resource-checkbox {
+  padding: 0.2rem 0;
+  color: rgba(255,255,255,0.75);
+}
