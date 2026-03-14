@@ -57,7 +57,7 @@ export const FOOTER_LINKS = {
         { label: 'PMU Foundations Course', href: '/academy/training' },
         { label: 'Apply Now', href: '/academy/apply' },
         { label: 'Join Waitlist', href: '/academy/waitlist' },
-        { label: 'Student Portal', href: '/portal' },
+        { label: 'Student Portal', href: '/academy/portal/login' },
     ],
     company: [
         { label: 'About', href: '/about' },
