@@ -19,19 +19,19 @@ export function Footer() {
                                 {SITE_CONFIG.name}
                             </span>
                         </Link>
-                        <p className="mt-4 text-sm leading-relaxed max-w-sm" style={{ color: 'rgba(250,248,245,0.7)' }}>
+                        <p className="mt-4 text-sm text-warm-white/60 leading-relaxed max-w-sm">
                             {SITE_CONFIG.description}
                         </p>
                         <div className="mt-6 space-y-3">
-                            <a href={`tel:${SITE_CONFIG.phone}`} className="flex items-center gap-3 text-sm hover:text-rose-gold transition-colors" style={{ color: 'rgba(250,248,245,0.75)' }}>
+                            <a href={`tel:${SITE_CONFIG.phone}`} className="flex items-center gap-3 text-sm text-warm-white/70 hover:text-rose-gold transition-colors">
                                 <Phone className="h-4 w-4" />
                                 {SITE_CONFIG.phone}
                             </a>
-                            <a href={`mailto:${SITE_CONFIG.email}`} className="flex items-center gap-3 text-sm hover:text-rose-gold transition-colors" style={{ color: 'rgba(250,248,245,0.75)' }}>
+                            <a href={`mailto:${SITE_CONFIG.email}`} className="flex items-center gap-3 text-sm text-warm-white/70 hover:text-rose-gold transition-colors">
                                 <Mail className="h-4 w-4" />
                                 {SITE_CONFIG.email}
                             </a>
-                            <div className="flex items-center gap-3 text-sm" style={{ color: 'rgba(250,248,245,0.75)' }}>
+                            <div className="flex items-center gap-3 text-sm text-warm-white/70">
                                 <MapPin className="h-4 w-4 shrink-0" />
                                 {SITE_CONFIG.address.street}, {SITE_CONFIG.address.city}, {SITE_CONFIG.address.state}
                             </div>
@@ -44,8 +44,7 @@ export function Footer() {
                         <ul className="space-y-3">
                             {FOOTER_LINKS.services.map((link) => (
                                 <li key={link.href}>
-                                    <Link href={link.href} className="text-sm hover:text-rose-gold transition-colors" style={{ color: 'rgba(250,248,245,0.7)' }}>
-
+                                    <Link href={link.href} className="text-sm text-warm-white/60 hover:text-rose-gold transition-colors">
                                         {link.label}
                                     </Link>
                                 </li>
@@ -59,8 +58,7 @@ export function Footer() {
                         <ul className="space-y-3">
                             {FOOTER_LINKS.academy.map((link) => (
                                 <li key={link.href}>
-                                    <Link href={link.href} className="text-sm hover:text-rose-gold transition-colors" style={{ color: 'rgba(250,248,245,0.7)' }}>
-
+                                    <Link href={link.href} className="text-sm text-warm-white/60 hover:text-rose-gold transition-colors">
                                         {link.label}
                                     </Link>
                                 </li>
@@ -74,8 +72,7 @@ export function Footer() {
                         <ul className="space-y-3">
                             {FOOTER_LINKS.company.map((link) => (
                                 <li key={link.href}>
-                                    <Link href={link.href} className="text-sm hover:text-rose-gold transition-colors" style={{ color: 'rgba(250,248,245,0.7)' }}>
-
+                                    <Link href={link.href} className="text-sm text-warm-white/60 hover:text-rose-gold transition-colors">
                                         {link.label}
                                     </Link>
                                 </li>
