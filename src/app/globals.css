@@ -97,6 +97,21 @@ p {
   font-size: 0.9375rem;
 }
 
+/* Dark-section overrides — global heading/paragraph colours must yield
+   inside espresso-background sections so text remains readable. */
+.bg-espresso h1,
+.bg-espresso h2,
+.bg-espresso h3,
+.bg-espresso h4,
+.bg-espresso h5,
+.bg-espresso h6 {
+  color: var(--warm-white);
+}
+
+.bg-espresso p {
+  color: rgba(250, 248, 245, 0.6);
+}
+
 /* ===== Selection ===== */
 
 ::selection {
@@ -110,6 +125,15 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* ===== Button Component ===== */
+/* Hover colour transitions — inline `style.color` handles the resting
+   state; these rules handle pseudo-states that inline styles can't reach. */
+
+.btn-outline:hover {
+  color: #FAF8F5 !important; /* warm-white on hover over charcoal bg */
+}
+
 
 /* ===== Scrollbar ===== */
 

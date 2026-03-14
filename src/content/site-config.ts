@@ -44,8 +44,7 @@ export const NAV_LINKS = [
 
 export const FOOTER_LINKS = {
     services: [
-        { label: 'Microblading', href: '/services/microblading' },
-        { label: 'Powder Brows', href: '/services/powder-brows' },
+        { label: 'Permanent Brows', href: '/services/permanent-brows' },
         { label: 'Lip Blush', href: '/services/lip-blush' },
         { label: 'Lash Enhancement', href: '/services/lash-enhancement' },
         { label: 'Fine-Line Tattoo', href: '/services/fine-line-tattoo' },

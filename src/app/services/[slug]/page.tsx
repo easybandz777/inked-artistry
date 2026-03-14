@@ -134,30 +134,53 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </Section>
 
             {/* Prep & Aftercare */}
-            <Section spacious>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <Section variant="alternate" spacious>
+                <SectionHeader label="Your Journey" title="Preparation & Aftercare" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <AnimatedSection direction="left">
-                        <h3 className="font-serif text-xl mb-6">Preparation Requirements</h3>
-                        <ul className="space-y-3">
-                            {service.prepRequirements.map((item, i) => (
-                                <li key={i} className="flex items-start gap-3 text-sm text-soft-gray">
-                                    <span className="w-1.5 h-1.5 bg-rose-gold rounded-full mt-1.5 shrink-0" />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="bg-warm-white rounded-sm border border-border/50 overflow-hidden shadow-sm">
+                            <div className="px-6 py-4 bg-gradient-to-r from-blush to-cream border-b border-border/50">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-full bg-rose-gold/10 flex items-center justify-center">
+                                        <Calendar className="h-4 w-4 text-rose-gold" />
+                                    </div>
+                                    <h3 className="font-serif text-lg !mb-0">Before Your Appointment</h3>
+                                </div>
+                            </div>
+                            <ul className="p-6 space-y-4">
+                                {service.prepRequirements.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                        <span className="mt-1 flex items-center justify-center w-5 h-5 rounded-full bg-blush text-rose-gold text-[0.6rem] font-semibold shrink-0">
+                                            {i + 1}
+                                        </span>
+                                        <span className="text-sm text-charcoal leading-relaxed">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </AnimatedSection>
 
                     <AnimatedSection direction="right" delay={0.15}>
-                        <h3 className="font-serif text-xl mb-6">Aftercare Instructions</h3>
-                        <ul className="space-y-3">
-                            {service.aftercare.map((item, i) => (
-                                <li key={i} className="flex items-start gap-3 text-sm text-soft-gray">
-                                    <span className="w-1.5 h-1.5 bg-rose-gold rounded-full mt-1.5 shrink-0" />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="bg-warm-white rounded-sm border border-border/50 overflow-hidden shadow-sm">
+                            <div className="px-6 py-4 bg-gradient-to-r from-blush to-cream border-b border-border/50">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-full bg-rose-gold/10 flex items-center justify-center">
+                                        <Check className="h-4 w-4 text-rose-gold" />
+                                    </div>
+                                    <h3 className="font-serif text-lg !mb-0">Aftercare Instructions</h3>
+                                </div>
+                            </div>
+                            <ul className="p-6 space-y-4">
+                                {service.aftercare.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                        <span className="mt-1 flex items-center justify-center w-5 h-5 rounded-full bg-blush text-rose-gold text-[0.6rem] font-semibold shrink-0">
+                                            {i + 1}
+                                        </span>
+                                        <span className="text-sm text-charcoal leading-relaxed">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </AnimatedSection>
                 </div>
             </Section>
